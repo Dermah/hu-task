@@ -13,6 +13,7 @@
     "ts-jest": "^23.10.0"
   },
   "dependencies": {
+    "moment": "^2.22.2",
     "typescript": "^3.0.3"
   },
   "scripts": {

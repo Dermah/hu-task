@@ -1,0 +1,10 @@
+{
+  "name": "hu-task",
+  "version": "1.0.0",
+  "description": "Task to calculate booking costs",
+  "main": "index.js",
+  "repository": "https://github.com/Dermah/hu-task",
+  "author": "Sputnik",
+  "license": "None",
+  "private": true
+}

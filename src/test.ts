@@ -4,7 +4,7 @@ import { validateAndCostBooking } from ".";
 
 describe("Booking Validation Function", () => {
   inputFixture.map((input, i) => {
-    it("should handle case " + i, () => {
+    it("should handle case id:" + input.id, () => {
       expect(validateAndCostBooking(input)).toEqual(expectedFixture[i]);
     });
   });

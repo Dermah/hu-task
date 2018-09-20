@@ -19,10 +19,20 @@ cd hu-task
 Then add dependencies:
 
 ```sh
-yarn test
+yarn
 ```
 
-## Develop
+## Run
+
+Ensure there is an input file at `./src/fixtures/input.json`. Then run:
+
+```sh
+yarn start
+```
+
+The processed file will be written to `./output.json`
+
+## Test
 
 Run tests:
 

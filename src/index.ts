@@ -67,12 +67,24 @@ export const validateAndCostBooking = (booking: Booking): CostedBooking => {
       // If any part of a booking is charged at the night rate, the whole booking is charged at the night rate:
       // Fri 1800 - 2100 will be charged at the night rate (3 x 42.93)
       // Wed 0500 - 1000 will be charged at the night rate (5 x 42.93)
+      if (
+        // there are only 12 hours of day rate so if booking is >12hrs then it must have a night component
+        duration.asHours() > 12 ||
+        // if the start or end times are in the night zone, then the booking is charged as night
+        // unclear
+        (from.hours() <= 6 || from.hours() >= 20) ||
+        (to.hours() <= 6 || to.hours() >= 20)
+      ) {
+        total = RATES.night * duration.asHours();
+      } else {
+        total = RATES.day * duration.asHours();
+      }
     }
   }
 
   return {
     ...booking,
     isValid,
-    total
+    total: parseFloat(total.toFixed(2))
   };
 };
